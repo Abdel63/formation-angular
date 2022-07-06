@@ -7,5 +7,5 @@ import { Stagiaire } from './interfaces/stagiaire';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'formation-angular';
+ 
 }

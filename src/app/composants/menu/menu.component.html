@@ -1,5 +1,11 @@
 <ul>
-    <li><a routerLink="">Accueil</a></li>
-    <li><a routerLink="/adresse">Adresse</a></li>
-    <li><a routerLink="/stagiaire">Stagiaire</a></li>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a routerLink="">Accueil</a>
+    </li>
+    <li routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true }">
+        <a routerLink="/adresse">Adresse</a>
+    </li>
+    <li routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true }">
+        <a routerLink="/stagiaire">Stagiaire</a>
+    </li>
 </ul>
