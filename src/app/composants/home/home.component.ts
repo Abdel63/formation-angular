@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Stagiaire } from 'src/app/interfaces/stagiaire';
 
 @Component({
@@ -7,6 +8,12 @@ import { Stagiaire } from 'src/app/interfaces/stagiaire';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  maDate = Date.now();
+  nom = "washington";
+  prenom = "denzel";
+  city = "Nice";
+  zipCode = "06000";
+  streetName = "paradis";
   title = 'formation-angular';
   tab: number[] = [2, 5, 3, 8];
   moyennes: number[] = [12, 5, 16, 18];
@@ -17,12 +24,18 @@ export class HomeComponent implements OnInit {
     { num: 300, nom: "doe", prenom: "joe" },
     { num: 400, nom: "maggio", prenom: "sophie" },
   ]
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
   direBonjour() {
     alert('bonjour');
   }
-
+  visiter() {
+    const firstname = "Kostas";
+    const lastname = "Mitroglou";
+    
+    this.router.navigate(['/stagiaire', lastname, firstname]); // ici tu construit l'url qui appelle le composant
+    // this.router.navigateByUrl(`/stagiaire/${lastname}/${firstname}`) // ici c la classe qui appelle le composant donc c plus compliqué
+  }
 }
