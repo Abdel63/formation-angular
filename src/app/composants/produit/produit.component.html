@@ -1,12 +1,12 @@
 <h2 class="container">Produit</h2>
-<form class="container" (ngSubmit)="afficherTout()" #monForm="ngForm">
-    <div class="mb-3">
+<form class="container" (ngSubmit)="ajouterProduit()" #monForm="ngForm">
+    <!-- <div class="mb-3">
         <label for="id" class="form-label">Identifiant</label>
         <input type="number" class="form-control" id="id" name="id" [(ngModel)]="produit.id" required #id="ngModel">
         <div [hidden]="id.valid || id.pristine" class="text-danger text-center">
             L'identifiant est obligatoire
         </div>
-    </div>
+    </div> -->
 
     <div class="mb-3">
         <label for="designation" class="form-label">Désignation</label>
@@ -52,7 +52,7 @@
                 <th>Désignation</th>
                 <th>Prix unitaire</th>
                 <th>Quantité</th>
-                <th>Action</th>
+                <th class="text-center">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -61,7 +61,12 @@
                 <td>{{ elt.designation }}</td>
                 <td>{{ elt.prixUnitaire }}</td>
                 <td>{{ elt.quantiteEnStock }}</td>
-                <td></td>
+                <td class="text-center">
+                    <button class="btn mx-5" (click)="supprimerProduit(elt.id)">
+                        <i style="color:tomato" class="fas fa-trash-alt"></i>
+                    </button>
+                    <a class="mx-5" [routerLink]="['/produit', elt.id]"><i class="far fa-edit"></i></a>
+                </td>
             </tr>
 
         </tbody>

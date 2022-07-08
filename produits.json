@@ -1,0 +1,28 @@
+{
+  "produits": [
+    {
+      "designation": "écran oled",
+      "prixUnitaire": 1000,
+      "quantiteEnStock": 5,
+      "id": 2
+    },
+    {
+      "designation": "clavier",
+      "prixUnitaire": 60,
+      "quantiteEnStock": 25,
+      "id": 3
+    },
+    {
+      "designation": "fil",
+      "prixUnitaire": 16,
+      "quantiteEnStock": 200,
+      "id": 4
+    },
+    {
+      "designation": "tablette",
+      "prixUnitaire": 500,
+      "quantiteEnStock": 3,
+      "id": 5
+    }
+  ]
+}
