@@ -1,6 +1,7 @@
-<nav class="navbar navbar-expand-sm bg-light navbar-info">
+<!-- <nav class="navbar navbar-expand-sm bg-light navbar-info">
     <div class="container">
-        <ul class="navbar-nav">
+        <div class="row">
+        <ul class="navbar-nav col-4">
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                 <a class="nav-link" routerLink="">Accueil</a>
             </li>
@@ -16,6 +17,53 @@
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                 <a class="nav-link" routerLink="/produit">Produit</a>
             </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a class="nav-link" routerLink="/produit">Produit</a>
+            </li>
         </ul>
     </div>
+</div>
+</nav> -->
+
+<nav class="container mb-3 navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class="navbar-nav container">
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link" routerLink="">Accueil</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link" routerLink="/adresse">Adresse</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link" routerLink="/stagiaire">Stagiaire</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link" routerLink="/formulaire">Formulaire</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link" routerLink="/tableau">Tableau</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link" routerLink="/calcul">Calcul</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link" routerLink="/produit">Produit</a>
+        </li>
+        <li class="nav-item" *ngIf="!isConnected; else deconnection">
+            <form (ngSubmit)="seConnecter()">
+                <input type="text" placeholder="Nom d'utilisateur" name="nom" [(ngModel)]="utilisateur.nom">
+                <input type="password" placeholder="Mot de passe" name="motDePasse"
+                    [(ngModel)]="utilisateur.motDePasse">
+                <button class="btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                </button>
+            </form>
+        </li>
+       
+        <ng-template #deconnection>
+            Bonjour {{ utilisateur.prenom | titlecase }} {{ utilisateur.nom | uppercase }}
+            <button class="btn" (click)="seDeconnecter()">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </ng-template>
+    </ul>
 </nav>
